@@ -1,0 +1,42 @@
+@use "fonts";
+@use "layout";
+@use "../utils";
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: fonts.$font, sans-serif;
+  background-color: var(
+    --bg-body
+  ); // CSS inheritance solve this problem naturally., Note that the selector given to the ruleset defines the scope that the custom property can be used in. A common best practice is to define custom properties on the :root pseudo-class, so that it can be applied globally across your HTML document:
+  font-size: fonts.$fs-18; // 18 / 16 , default base browser font-size
+  line-height: 1.56; // 28 / 18. Using ratio just if we change font-size, the line height will kind of change with it
+}
+
+.wrapper {
+  width: calc(100% - 2rem);
+  max-width: layout.$container;
+  margin: 0 auto; // Center the content in the page
+
+  @include utils.breakpoint-up(medium) {
+    width: calc(100% - 3.75rem);
+  }
+}
+
+a {
+  display: inline-block;
+}
+
+a:hover > svg > path {
+  fill: var(--accent);
+}
