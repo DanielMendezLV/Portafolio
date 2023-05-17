@@ -34,9 +34,18 @@ body {
 }
 
 a {
-  display: inline-block;
+  transition: color 250ms ease-in-out;
 }
 
-a:hover > svg > path {
-  fill: var(--accent);
+a:hover {
+  color: var(--accent);
+}
+
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px; // If you set the size to 0 pixels the screen reader don't know about it.
+  height: 1px;
+  overflow: hidden;
 }

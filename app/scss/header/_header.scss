@@ -1,9 +1,57 @@
+@use "../utils";
+
 .header {
+  margin-top: 20px; // I dont necesary whant this margin top scales. Rems are the most important for text. I want the text scale up as your browser font base change, an some margins that i want to scale
+
+  // Remains that the mobile design is the first made.
+  &__nav {
+    display: flex;
+    flex-wrap: wrap; // Wrap when there is no more space available. If not try to fit one line
+    text-align: center;
+    justify-content: center; // Center the items in the middle of main axis (x)
+    gap: 20px 25px; // row-gap and column-gap, Use pixels for some of these smaller measurements in the web because usually use rems so that they'll cale up as you change the font base, but if you do for things like padding then when the browser base font is really big it willl sort of the padding taking up more space that the prefered
+
+    @include utils.breakpoint-up(medium) {
+      justify-content: flex-start;
+      text-align: left;
+      align-items: center; // Center the items in the middle of the cross axis (y)
+      gap: 32px; // row-gap and column-gap,
+    }
+  }
+
   &__home {
     font-size: 1.5rem;
     // https://royalfig.github.io/fluid-typography-calculator/
     font-size: clamp(1.5rem, 1.02rem + 2.04vw, 2rem);
+    line-height: 1;
     color: var(--text);
     text-decoration: none;
+    flex: 1 0 100%; // Flex grow, flex shrink, flex basis
+    // Flex grow: Takes a unitless value that serves as a proportion and what it does is allows the item to grow if there's enough space for it to do so.
+    // If all the items have flex growth set to 1 then the remaining space will be distributed equally to all children, the default value is always 1
+    // Flex shrink: Take a unitless value, defines how fast one item shrinks in comparison to the others. To not shrink an item the shrink will be 0.
+    // Flex basis: Defines the size of an item before the remaining space is distributed, basically if your item already has a size like a width but you want to overwrite that size with something else
+    @include utils.breakpoint-up(medium) {
+      flex: 1%; // This work as flex basis https://developer.mozilla.org/es/docs/Web/CSS/flex
+      /* : Specifies the initial size of the flex item before any remaining space is distributed. In this case, it is set to 1%, indicating that the item should have a width or height (depending on the flex container's direction) of 1% of the container's size.
+      */ /* Un valor, width/height: flex-basis */
+      margin-right: auto;
+    }
+  }
+
+  &__social {
+    display: block;
+  }
+
+  &__social > svg {
+    display: block;
+  }
+
+  &__social > svg > path {
+    transition: fill 250ms ease-in-out;
+  }
+
+  &__social:hover > svg > path {
+    fill: var(--accent);
   }
 }
