@@ -2,6 +2,12 @@
 
 .header {
   margin-top: 20px; // I dont necesary whant this margin top scales. Rems are the most important for text. I want the text scale up as your browser font base change, an some margins that i want to scale
+  position: relative;
+  z-index: 1;
+
+  @include utils.breakpoint-up(medium) {
+    margin-top: 30px;
+  }
 
   // Remains that the mobile design is the first made.
   &__nav {
@@ -16,6 +22,7 @@
       text-align: left;
       align-items: center; // Center the items in the middle of the cross axis (y)
       gap: 32px; // row-gap and column-gap,
+      margin-bottom: 90px;
     }
   }
 

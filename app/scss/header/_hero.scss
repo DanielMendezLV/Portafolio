@@ -2,7 +2,6 @@
 
 
 .hero {
-   
 
     &__wrapper{
         padding-bottom: 80px;
@@ -16,12 +15,52 @@
         translate: -50%; // And translate 50% of the size of the element, this make the element will be "center" 
         top: 0;
         outline: 2px solid lime;
+
+        width: 164px; 
+        height: auto;
+
+        @include utils.breakpoint-up(medium) {
+            height: auto;
+            width: 322px;
+            left: auto;
+            right: 0;
+            translate: 0;
+        }
+    }
+
+    &__rings{
+        position: absolute;
+        right: 50%;
+        top:130px;
+
+        @include utils.breakpoint-up(medium) {
+            top: 85px;
+        }
+    }
+
+    &__circle{
+        position: absolute;
+        top: 254px;
+        right: 0;
+        translate: 50%;
+       
+     
+        @include utils.breakpoint-up(medium) {
+            top: 468px; 
+        }
     }
 
     &__text{
         text-align: center;
         margin-top: 335px; // To be under the image   math: image height + size to text  - header height if needs that size change this need to be with javascript
         position: relative;
+      
+
+        @include utils.breakpoint-up(medium) {
+           text-align: left;
+           margin-top: 0;
+           width: 62vw;
+        }
     }
 
     &__mark{
@@ -34,12 +73,22 @@
 
     &__headline{
         margin-bottom: 20px; // Not rems, the spacing matter
+        br {
+            display: none;
+        }
 
         @include utils.breakpoint-up(medium) {
             margin-bottom: 60px;
+            br {
+                display: inline-block;
+            }
         }
+
         @include utils.breakpoint-up(large) {
             margin-bottom: 43px;
+            br {
+                display: none;
+            }
         }
     }
 
