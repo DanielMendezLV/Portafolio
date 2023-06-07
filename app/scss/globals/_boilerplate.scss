@@ -21,6 +21,7 @@ body {
   ); // CSS inheritance solve this problem naturally., Note that the selector given to the ruleset defines the scope that the custom property can be used in. A common best practice is to define custom properties on the :root pseudo-class, so that it can be applied globally across your HTML document:
   font-size: fonts.$fs-18; // 18 / 16 , default base browser font-size
   line-height: 1.56; // 28 / 18. Using ratio just if we change font-size, the line height will kind of change with it
+  padding-bottom: 60rem;
 }
 
 .wrapper {
@@ -37,9 +38,56 @@ a {
   transition: color 250ms ease-in-out;
 }
 
+// Helper class
+a.underline{
+  display: inline-block; // The brackground image not work if i set the value of background-size bigger, for this is the line
+  padding-bottom: 10px;
+
+
+  font-size: 1rem;
+  line-height: 1.625;
+  letter-spacing: 2.29px;
+  text-transform: uppercase;
+  font-weight: 700; // bold
+  color: var(--text1);
+  text-decoration: none;
+
+  background-image: linear-gradient(to right, var(--accent) 75%, var(--accent) 75%);
+  background-position: 0 2.1em; // relative the fontsize, the fontsize is 16   10/16 = 0.625
+  background-repeat: repeat-x;
+  background-size: 8px 2px;
+
+}
+
 a:hover {
   color: var(--accent);
 }
+
+h1, h2, h3, p{
+  margin-top: 0;;
+}
+
+h1, h2, h3 {
+  line-height: 1;
+}
+
+
+
+
+h1 {
+  font-size: 2.5rem;
+  font-size: clamp(2.5rem, 0.7rem + 7.68vw, 5.5rem);
+}
+
+p {
+  line-height: 1.3;
+  font-size: 1rem;
+  font-size: clamp(1rem, 0.79rem + 0.89vw, 1.125rem);
+  color: var(--text2);
+  margin-bottom: 24px;
+}
+
+
 
 .visually-hidden {
   position: absolute;
