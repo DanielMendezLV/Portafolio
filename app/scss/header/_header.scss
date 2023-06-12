@@ -6,7 +6,12 @@
   z-index: 1;
 
   @include utils.breakpoint-up(medium) {
-    margin-top: 30px;
+    margin-top: 40px;
+    margin-bottom: 90px;
+  }
+
+  @include utils.breakpoint-up(large) {
+    margin-bottom: 127px;
   }
 
   // Remains that the mobile design is the first made.
@@ -22,7 +27,10 @@
       text-align: left;
       align-items: center; // Center the items in the middle of the cross axis (y)
       gap: 32px; // row-gap and column-gap,
-      margin-bottom: 90px;
+    }
+
+    @include utils.breakpoint-up(medium) {
+      padding-right: 30px;
     }
   }
 
@@ -39,7 +47,7 @@
     // Flex shrink: Take a unitless value, defines how fast one item shrinks in comparison to the others. To not shrink an item the shrink will be 0.
     // Flex basis: Defines the size of an item before the remaining space is distributed, basically if your item already has a size like a width but you want to overwrite that size with something else
     @include utils.breakpoint-up(medium) {
-      flex: 1%; // This work as flex basis https://developer.mozilla.org/es/docs/Web/CSS/flex
+      flex: 0 1 auto; // This work as flex basis https://developer.mozilla.org/es/docs/Web/CSS/flex
       /* : Specifies the initial size of the flex item before any remaining space is distributed. In this case, it is set to 1%, indicating that the item should have a width or height (depending on the flex container's direction) of 1% of the container's size.
       */ /* Un valor, width/height: flex-basis */
       margin-right: auto;

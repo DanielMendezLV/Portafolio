@@ -38,7 +38,7 @@ a.underline {
   padding-bottom: 10px;
   font-size: 1rem;
   line-height: 1.625;
-  letter-spacing: 2.29px;
+  letter-spacing: 0.143em;
   text-transform: uppercase;
   font-weight: 700;
   color: var(--text1);
@@ -64,6 +64,7 @@ h1, h2, h3 {
 h1 {
   font-size: 2.5rem;
   font-size: clamp(2.5rem, 0.7rem + 7.68vw, 5.5rem);
+  letter-spacing: -0.028em;
 }
 
 p {
@@ -71,7 +72,6 @@ p {
   font-size: 1rem;
   font-size: clamp(1rem, 0.79rem + 0.89vw, 1.125rem);
   color: var(--text2);
-  margin-bottom: 24px;
 }
 
 .visually-hidden {
@@ -99,7 +99,13 @@ p {
 }
 @media (min-width: 43.75rem) {
   .header {
-    margin-top: 30px;
+    margin-top: 40px;
+    margin-bottom: 90px;
+  }
+}
+@media (min-width: 56.25em) {
+  .header {
+    margin-bottom: 127px;
   }
 }
 .header__nav {
@@ -115,7 +121,11 @@ p {
     text-align: left;
     align-items: center;
     gap: 32px;
-    margin-bottom: 90px;
+  }
+}
+@media (min-width: 43.75rem) {
+  .header__nav {
+    padding-right: 30px;
   }
 }
 .header__home {
@@ -128,7 +138,7 @@ p {
 }
 @media (min-width: 43.75rem) {
   .header__home {
-    flex: 1%;
+    flex: 0 1 auto;
     /* : Specifies the initial size of the flex item before any remaining space is distributed. In this case, it is set to 1%, indicating that the item should have a width or height (depending on the flex container's direction) of 1% of the container's size.
     */ /* Un valor, width/height: flex-basis */
     margin-right: auto;
@@ -151,6 +161,16 @@ p {
   padding-bottom: 80px;
   border-bottom: 1px solid var(--text2);
 }
+@media (min-width: 43.75rem) {
+  .hero__wrapper {
+    padding-bottom: 60px;
+  }
+}
+@media (min-width: 56.25em) {
+  .hero__wrapper {
+    position: relative;
+  }
+}
 .hero__image {
   position: absolute;
   left: 50%;
@@ -163,10 +183,17 @@ p {
 @media (min-width: 43.75rem) {
   .hero__image {
     height: auto;
-    width: 322px;
+    width: 42vw;
+    max-width: 445px;
     left: auto;
     right: 0;
     translate: 0;
+  }
+}
+@media (min-width: 56.25em) {
+  .hero__image {
+    translate: 0 -199px;
+    width: 445px;
   }
 }
 .hero__rings {
@@ -190,6 +217,12 @@ p {
     top: 468px;
   }
 }
+@media (min-width: 56.25em) {
+  .hero__circle {
+    top: 322px;
+    right: 445px;
+  }
+}
 .hero__text {
   text-align: center;
   margin-top: 335px;
@@ -209,7 +242,7 @@ p {
   background-size: 8px 4px;
 }
 .hero__headline {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 .hero__headline br {
   display: none;
@@ -228,5 +261,20 @@ p {
   }
   .hero__headline br {
     display: none;
+  }
+}
+.hero__description {
+  margin-bottom: 24px;
+}
+@media (min-width: 43.75rem) {
+  .hero__description {
+    margin-bottom: 34px;
+    width: 70%;
+  }
+}
+@media (min-width: 56.25em) {
+  .hero__description {
+    margin-bottom: 66px;
+    width: 38ch;
   }
 }/*# sourceMappingURL=style.css.map */
