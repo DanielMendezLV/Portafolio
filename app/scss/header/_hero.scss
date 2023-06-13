@@ -2,6 +2,21 @@
 
 
 .hero {
+    margin-top: -72px;
+   
+
+    &__content{
+        @include utils.breakpoint-up(medium) {
+            
+            display: flex;
+            overflow-x: visible; // THis is for not see a border 
+            align-items: center;
+        }
+    }
+
+    &__content picture{
+        order: 2;
+    }
 
     &__wrapper{
         padding-bottom: 80px;
@@ -17,17 +32,19 @@
     }
 
     &__image{
-         position: absolute; // When things overlapped something needs to be position absolute. 
+        position: absolute; // When things overlapped something needs to be position absolute. 
         // Margin inline : auto not work for absolute position elements, this is another workaround. 
         left: 50%;  // Put the image 50% of the parent element. 
         translate: -50%; // And translate 50% of the size of the element, this make the element will be "center" 
         top: 0;
+
         outline: 2px solid lime;
 
         width: 164px; 
         height: auto;
 
         @include utils.breakpoint-up(medium) {
+            position: relative;
             height: auto;
             width: 42vw;
             max-width: 445px;
@@ -48,7 +65,10 @@
         top:130px;
 
         @include utils.breakpoint-up(medium) {
-            top: 85px;
+            top: 90px ;
+            right: auto;
+            left: 0;
+            translate: -50%;
         }
 
         
@@ -59,10 +79,12 @@
         top: 254px;
         right: 0;
         translate: 50%;
-       
+        
      
         @include utils.breakpoint-up(medium) {
-            top: 468px; 
+            top: auto;
+            z-index: 1;
+            bottom: 74px; 
         }
 
         @include utils.breakpoint-up(large) {
@@ -75,12 +97,13 @@
         text-align: center;
         margin-top: 335px; // To be under the image   math: image height + size to text  - header height if needs that size change this need to be with javascript
         position: relative;
-      
+        z-index: 1;
 
         @include utils.breakpoint-up(medium) {
            text-align: left;
-           margin-top: 0;
-           width: 62vw;
+           margin-top: 0; 
+           margin-right: -30px;
+           flex: 1 0 58vw;
         }
     }
 
@@ -94,6 +117,7 @@
 
     &__headline{
         margin-bottom: 24px; // Not rems, the spacing matter
+        color: var(--text);
         br {
             display: none;
         }
@@ -118,7 +142,6 @@
 
         @include utils.breakpoint-up(medium) {
             margin-bottom: 34px;
-            width: 70%;
         }
 
         @include utils.breakpoint-up(large) {
@@ -130,7 +153,7 @@
     }
 
     &__contact{
-
+      
     }
 
 }

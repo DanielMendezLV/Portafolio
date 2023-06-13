@@ -41,7 +41,7 @@ a.underline {
   letter-spacing: 0.143em;
   text-transform: uppercase;
   font-weight: 700;
-  color: var(--text1);
+  color: var(--text);
   text-decoration: none;
   background-image: linear-gradient(to right, var(--accent) 75%, var(--accent) 75%);
   background-position: 0 2.1em;
@@ -65,6 +65,7 @@ h1 {
   font-size: 2.5rem;
   font-size: clamp(2.5rem, 0.7rem + 7.68vw, 5.5rem);
   letter-spacing: -0.028em;
+  line-height: 1.1;
 }
 
 p {
@@ -100,12 +101,6 @@ p {
 @media (min-width: 43.75rem) {
   .header {
     margin-top: 40px;
-    margin-bottom: 90px;
-  }
-}
-@media (min-width: 56.25em) {
-  .header {
-    margin-bottom: 127px;
   }
 }
 .header__nav {
@@ -157,6 +152,19 @@ p {
   fill: var(--accent);
 }
 
+.hero {
+  margin-top: -72px;
+}
+@media (min-width: 43.75rem) {
+  .hero__content {
+    display: flex;
+    overflow-x: visible;
+    align-items: center;
+  }
+}
+.hero__content picture {
+  order: 2;
+}
 .hero__wrapper {
   padding-bottom: 80px;
   border-bottom: 1px solid var(--text2);
@@ -182,6 +190,7 @@ p {
 }
 @media (min-width: 43.75rem) {
   .hero__image {
+    position: relative;
     height: auto;
     width: 42vw;
     max-width: 445px;
@@ -203,7 +212,10 @@ p {
 }
 @media (min-width: 43.75rem) {
   .hero__rings {
-    top: 85px;
+    top: 90px;
+    right: auto;
+    left: 0;
+    translate: -50%;
   }
 }
 .hero__circle {
@@ -214,7 +226,9 @@ p {
 }
 @media (min-width: 43.75rem) {
   .hero__circle {
-    top: 468px;
+    top: auto;
+    z-index: 1;
+    bottom: 74px;
   }
 }
 @media (min-width: 56.25em) {
@@ -227,12 +241,14 @@ p {
   text-align: center;
   margin-top: 335px;
   position: relative;
+  z-index: 1;
 }
 @media (min-width: 43.75rem) {
   .hero__text {
     text-align: left;
     margin-top: 0;
-    width: 62vw;
+    margin-right: -30px;
+    flex: 1 0 58vw;
   }
 }
 .hero__mark {
@@ -243,6 +259,7 @@ p {
 }
 .hero__headline {
   margin-bottom: 24px;
+  color: var(--text);
 }
 .hero__headline br {
   display: none;
@@ -269,7 +286,6 @@ p {
 @media (min-width: 43.75rem) {
   .hero__description {
     margin-bottom: 34px;
-    width: 70%;
   }
 }
 @media (min-width: 56.25em) {

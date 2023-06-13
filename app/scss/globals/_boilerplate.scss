@@ -49,7 +49,7 @@ a.underline{
   letter-spacing: 0.143em; // 2.29 / 16 = 0.1431
   text-transform: uppercase;
   font-weight: 700; // bold
-  color: var(--text1);
+  color: var(--text);
   text-decoration: none;
 
   background-image: linear-gradient(to right, var(--accent) 75%, var(--accent) 75%);
@@ -78,6 +78,7 @@ h1 {
   font-size: 2.5rem;
   font-size: clamp(2.5rem, 0.7rem + 7.68vw, 5.5rem);
   letter-spacing: -0.028em;
+  line-height: 1.1;
 }
 
 p {
