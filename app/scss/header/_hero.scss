@@ -4,22 +4,31 @@
 .hero {
     margin-top: -72px;
    
+    @include utils.breakpoint-up(large) {
+       margin-top: 0px;
+    }
 
     &__content{
         @include utils.breakpoint-up(medium) {
-            
             display: flex;
             overflow-x: visible; // THis is for not see a border 
             align-items: center;
         }
+        @include utils.breakpoint-up(large) {
+            align-items: flex-start;
+         }
     }
 
     &__content picture{
         order: 2;
+
+        @include utils.breakpoint-up(large) {
+            margin-left: -80px 
+        }
     }
 
     &__wrapper{
-        padding-bottom: 80px;
+      
         border-bottom: 1px solid var(--text2) ;
 
         @include utils.breakpoint-up(medium) {
@@ -28,6 +37,7 @@
 
         @include utils.breakpoint-up(large) {
             position: relative;
+            padding-bottom: 260px;
         }
     }
 
@@ -54,7 +64,7 @@
         }
 
         @include utils.breakpoint-up(large) {
-            translate: 0 -199px;
+            margin-top: -199px;
             width: 445px;
         } 
     }
@@ -63,12 +73,18 @@
         position: absolute;
         right: 50%;
         top:130px;
+        z-index: -1;
 
         @include utils.breakpoint-up(medium) {
             top: 90px ;
             right: auto;
             left: 0;
             translate: -50%;
+        }
+
+        @include utils.breakpoint-up(large) {
+            top: 0px;
+            translate: -50% -50%;
         }
 
         
@@ -102,8 +118,15 @@
         @include utils.breakpoint-up(medium) {
            text-align: left;
            margin-top: 0; 
+           margin-block-start: 90px;
            margin-right: -30px;
            flex: 1 0 58vw;
+        }
+
+        @include utils.breakpoint-up(large) {
+            margin-top: 0px; // To be under th
+            margin-right: 0px;
+            flex: 1;
         }
     }
 

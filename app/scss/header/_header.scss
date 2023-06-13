@@ -6,12 +6,13 @@
   z-index: 1;
 
   @include utils.breakpoint-up(medium) {
-    margin-top: 40px;
+    margin-top: 30px;
     // margin-bottom: 90px;
   }
 
   @include utils.breakpoint-up(large) {
-    // margin-bottom: 127px;
+    margin-block-start: 40px;
+    margin-block-end: 127px;
   }
 
   // Remains that the mobile design is the first made.
