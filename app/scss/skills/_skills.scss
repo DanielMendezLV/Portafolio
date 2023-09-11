@@ -1,0 +1,84 @@
+
+@use "../utils";
+
+// The lesson with absolute position is try to avoid you know setting pixel like top: 445px, because if 
+// Things change like  titles or subtitles in view mobile and tablet affect the other stuff, its better try to set the absolute position
+// of the child of a relative position parent and sort of align according to those edges , so you can say 
+// rigth zero, bottom zero and use transalte to ajust after that  
+// The child is the image (that is absolute) and the parent relative is skills 
+
+.skills {
+    position: relative;
+    // outline: 2px solid aqua;
+    
+
+    &__wrapper{
+        // Instead of padding top and bottom
+        // block element will try to take up all the available space 
+        padding-block: 40px;
+        // padding: 40px 0; This is equal to padding-block, but i put 0, and maybe this affect future styles
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        
+        @include utils.breakpoint-up(medium) {
+            
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 52px 24px;
+        }
+       
+    }
+
+    &__item{
+        text-align: center;
+
+        @include utils.breakpoint-up(medium) {
+           display: flex;
+           flex-direction: column;
+           flex-basis: calc(50% - 15px);
+           text-align: left;
+        }
+
+        @include utils.breakpoint-up(large) {
+            display: flex;
+            flex-direction: column;
+            flex-basis: calc(33% - 15px);
+            text-align: left;
+        }
+
+       
+
+
+    }
+
+    &__title{
+        line-height: 1.17; // 56 px line / 48 font size = 1.17
+        font-size: 2rem;
+        // Min Font Size : 32px, Max font size: 48px, Min Viewport: 375px Iphone 6s,7,x, Max Viewport : 700px tablet // fluid typography
+        font-size: clamp(2rem, 0.84rem + 4.92vw, 3rem);
+        margin-bottom: 2px;
+
+    }
+
+    
+    &__rings{
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        translate: 0 50%;
+        
+        
+        @include utils.breakpoint-up(medium) {
+            translate: 40% 50%;
+        }
+
+        @include utils.breakpoint-up(large) {
+            translate: -40% 50%;
+            left: 100%;
+        }
+    }
+
+
+}

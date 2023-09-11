@@ -29,7 +29,6 @@
 
     &__wrapper{
       
-        border-bottom: 1px solid var(--text2) ;
 
         @include utils.breakpoint-up(medium) {
             padding-bottom: 60px;
@@ -37,7 +36,7 @@
 
         @include utils.breakpoint-up(large) {
             position: relative;
-            padding-bottom: 260px;
+            padding-bottom: 160px;
         }
     }
 
@@ -73,7 +72,7 @@
         position: absolute;
         right: 50%;
         top:130px;
-        z-index: -1;
+        
 
         @include utils.breakpoint-up(medium) {
             top: 90px ;
@@ -114,6 +113,7 @@
         margin-top: 335px; // To be under the image   math: image height + size to text  - header height if needs that size change this need to be with javascript
         position: relative;
         z-index: 1;
+        margin-bottom: 40px;
 
         @include utils.breakpoint-up(medium) {
            text-align: left;
@@ -121,12 +121,14 @@
            margin-block-start: 90px;
            margin-right: -30px;
            flex: 1 0 58vw;
+           margin-bottom: 0px;
         }
 
         @include utils.breakpoint-up(large) {
             margin-top: 0px; // To be under th
             margin-right: 0px;
             flex: 1;
+            margin-bottom: 0px;
         }
     }
 
